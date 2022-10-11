@@ -1,0 +1,181 @@
+import java.util.*;
+
+class Number {	
+	Scanner sc=new Scanner(System.in);
+	int decimalnum;
+	int octalnum;
+	int binarynum;
+	int hexadecimalnum;
+	int temp,remainder;
+	
+	public void  choise() {
+		System.out.println("***** << Numeric Conversion >> *****");
+		System.out.println("1.Decimal to Binary \n2.Binary to Decimal");
+		System.out.println("3.Decimal to Octal \n4.Octal to Decimal");
+		System.out.println("5.Decimal to Hexadecimal \n6.Hexadecimal to Decimal");
+		
+		System.out.println("\nEnter your choise = ");
+		int x=sc.nextInt();
+		switch(x) {
+		case 1: {
+			decimal_to_binary();
+			break;
+		}
+		case 2: {
+			binary_to_decimal();
+			break;
+		}
+		case 3: {
+			decimal_to_octal();
+			break;
+		}
+		case 4: {
+			octal_to_decimal();
+			break;
+		}
+		case 5: {
+			decimal_to_hexadecimal();
+			break;
+		}
+		case 6: {
+			hexadecimal_to_decimal();
+			break;
+		}
+		default:
+		{
+			System.out.println("Invalid choise....please enter correct number !!! ");
+		}
+		
+		}
+	}
+
+	public void decimal_to_binary() {
+		System.out.println("Enter the value of decimal number = ");
+		decimalnum=sc.nextInt();
+		int n=decimalnum;
+		temp=0;
+		int i=0;
+		while(n!=0) {
+			
+			remainder=n%2;
+			temp=power(10, i)*remainder+temp;
+			n=n/2;
+			i++;
+		}
+		System.out.println("The conversion of "+decimalnum+" decimal to binary is = "+temp);
+	}
+	
+	
+	public void binary_to_decimal() {
+		System.out.println("Enter the value of binary number = ");
+		binarynum=sc.nextInt();
+		int n=binarynum;
+		temp=0;
+		int i=0;
+		while(n!=0) {
+			remainder=n%10;
+			temp=power(2, i)*remainder+temp;
+			n=n/10;
+			i++;
+		}
+		
+		System.out.println("The conversion of "+binarynum+" binary to decimal is = "+temp);
+	}
+	
+	public void decimal_to_octal() {
+		System.out.println("Enter the value of decimal number = ");
+		decimalnum=sc.nextInt();
+		int n=decimalnum;
+		temp=0;
+		int i=0;
+		while(n!=0) {
+			
+			remainder=n%8;
+			temp=power(10, i)*remainder+temp;
+			n=n/8;
+			i++;
+		}
+		System.out.println("The conversion of "+decimalnum+" decimal to octal is = "+temp);
+	}
+	
+	public void octal_to_decimal() {
+		System.out.println("Enter the value of octal number = ");
+		octalnum=sc.nextInt();
+		int n=octalnum;
+		temp=0;
+		int i=0;
+		while(n!=0) {
+			remainder=n%10;
+			temp=power(8, i)*remainder+temp;
+			n=n/10;
+			i++;
+		}
+		
+		System.out.println("The conversion of "+octalnum+" octal to decimal is = "+temp);
+	}
+	
+	public void decimal_to_hexadecimal() {
+		System.out.println("Enter the value of decimal number = ");
+		decimalnum=sc.nextInt();
+		int n=decimalnum;
+		char[] c= {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+		String ans=""; 
+		
+		while(n!=0) {
+			
+			remainder=n%16;
+			ans=c[remainder]+ans;
+			n=n/16;
+			
+		}
+		System.out.println("The conversion of "+decimalnum+" decimal to Hexadecimal is = "+ans);
+	}
+	
+	public void hexadecimal_to_decimal() {
+		System.out.println("Enter the value of hexadecimal number = ");
+		hexadecimalnum=sc.nextInt();
+		int n=hexadecimalnum;
+		int i=0;
+		while(n!=0) {
+			remainder=n%10;
+			temp=temp+power(16,i)*remainder;
+			n=n/10;
+			i++;
+		}
+		System.out.println("The conversion of "+hexadecimalnum+" hexadecimal to decimal is = "+temp);
+	}
+	
+	public int power(int base,int pow) {
+		
+		int answer;
+		if(pow==0) {
+			return answer=1;
+		}
+		else {
+			answer=base;
+			for(int i=1;i<pow;i++) {
+				answer=answer*base;
+			}
+			return answer;
+		}
+	}
+}
+
+
+public class NumberConverter {
+
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		char ch;
+		Number n1=new Number();
+
+		do {
+			n1.choise();
+			
+			System.out.println("Do you want to continue...[press'y'] =");
+			ch=scan.next().charAt(0);
+		}while(ch=='y');
+		
+	}
+
+}
