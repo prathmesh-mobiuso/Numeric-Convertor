@@ -147,7 +147,7 @@ public class User_client {
 		case 5: {
 			getDecimalNumber();
 			String Converted_number=NumberConverter.toDecimaltoHexadecimalConversion(decimalnum);
-			System.out.println("The conversion of Decimal number ["+decimalnum+"]  to Octal number is = "+Converted_number);
+			System.out.println("The conversion of Decimal number ["+decimalnum+"]  to Hexadecimal number is = "+Converted_number);
 			break;
 		}
 		case 6: {
