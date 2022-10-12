@@ -68,18 +68,41 @@ class NumberConverter {
 		return ans;
 	}
 	
-	public static int toHexadecimaltoDecimalConversion(int hexadecimalnum) {
-		int n=hexadecimalnum;
-		int i=0,remainder,ans=0;
-		while(n!=0) {
-			remainder=n%10;
-			ans=ans+power(16,i)*remainder;
-			n=n/10;
-			i++;
-		}
+	public static int toHexadecimaltoDecimalConversion(String hexa) {
+		
+		char[] c= {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+		char[] input=hexa.toCharArray();
+		int ans=0;
+		int i=0,count=0,index=0;
+		
+		for(int a=input.length-1;a>=0;a--) 
+		{
+			count=0;
+			  for(int j=0;j<c.length;j++)
+			  {
+				  
+				  if(input[a]!=c[j]) {
+					  count++;  
+				  }
+				  else {
+					  index=count;
+				  }
+				  
+				  if (count>15)
+				  {
+				  System.out.println("worng no. inputed");
+				  break;
+				  }
+ 
+			  }
+			  ans=ans+power(16,i)*index;
+			  i++;
+			  
+			}
+		
 		return ans;
+		
 	}
-	
 	
 	
 	private static int power(int base,int pow) {
@@ -107,7 +130,8 @@ public class User_client {
 	
 	Scanner sc=new Scanner(System.in);
 	int Converted_number;
-	int decimalnum,binarynum,hexadecimalnum,octalnum;
+	int decimalnum,binarynum,octalnum;
+	String hexadecimalnum;
 	
 	public void toChoise_the_Operation() {
 		System.out.println("***** << Numeric Conversion >> *****");
@@ -183,7 +207,7 @@ public class User_client {
 	
 	public void getHexadecimalNumber() {
 		System.out.println("Enter the value of hexadecimal number = ");
-		hexadecimalnum=sc.nextInt();
+		hexadecimalnum=sc.next();
 	}
 
 	
