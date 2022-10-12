@@ -1,7 +1,8 @@
 import java.util.*;
+
 class NumberConverter {
 	
-	public static int toDecimal_to_binary(int decimalnum) {
+	public static int toDecimaltoBinaryConversion(int decimalnum) {
 		
 		int n=decimalnum;
 		int i=0,remainder,ans=0;
@@ -15,7 +16,7 @@ class NumberConverter {
 	}
 	
 	
-	public static int toBinary_to_decimal(int binarynum) {
+	public static int toBinarytoDecimalConversion(int binarynum) {
 
 		int n=binarynum;
 		int i=0,remainder,ans=0;
@@ -28,7 +29,7 @@ class NumberConverter {
 		return ans;
 	}
 	
-	public static int toDecimal_to_octal(int decimalnum) {
+	public static int toDecimaltoOctalConversion(int decimalnum) {
 
 		int n=decimalnum;
 		int i=0,remainder,ans=0;
@@ -41,7 +42,7 @@ class NumberConverter {
 		return ans;
 	}
 	
-	public static int toOctal_to_decimal(int octalnum) {
+	public static int toOctaltoDecimalConversion(int octalnum) {
 
 		int n=octalnum;
 		int i=0,remainder,ans=0;
@@ -54,7 +55,7 @@ class NumberConverter {
 		return ans;
 	}
 	
-	public static String toDecimal_to_hexadecimal(int decimalnum) {
+	public static String toDecimaltoHexadecimalConversion(int decimalnum) {
 		int n=decimalnum;
 		char[] c= {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 		String ans=""; 
@@ -67,7 +68,7 @@ class NumberConverter {
 		return ans;
 	}
 	
-	public static int toHexadecimal_to_decimal(int hexadecimalnum) {
+	public static int toHexadecimaltoDecimalConversion(int hexadecimalnum) {
 		int n=hexadecimalnum;
 		int i=0,remainder,ans=0;
 		while(n!=0) {
@@ -121,37 +122,37 @@ public class User_client {
 		switch(x) {
 		case 1: {
 			getDecimalNumber();
-			Converted_number=NumberConverter.toDecimal_to_binary(decimalnum);
+			Converted_number=NumberConverter.toDecimaltoBinaryConversion(decimalnum);
 			System.out.println("The conversion of Decimal number ["+decimalnum+"]  to Binary number is = "+Converted_number);
 			break;
 		}
 		case 2: {
 			getBinaryNumber();
-			Converted_number=NumberConverter.toBinary_to_decimal(binarynum);
+			Converted_number=NumberConverter.toBinarytoDecimalConversion(binarynum);
 			System.out.println("The conversion of Binary number ["+binarynum+"]  to Decimal number is = "+Converted_number);
 			break;
 		}
 		case 3: {
 			getDecimalNumber();
-			Converted_number=NumberConverter.toDecimal_to_octal(decimalnum);
+			Converted_number=NumberConverter.toDecimaltoOctalConversion(decimalnum);
 			System.out.println("The conversion of Decimal number ["+decimalnum+"]  to Octal number is = "+Converted_number);
 			break;
 		}
 		case 4: {
 			getOctalNumber();
-			Converted_number=NumberConverter.toOctal_to_decimal(octalnum);
+			Converted_number=NumberConverter.toOctaltoDecimalConversion(octalnum);
 			System.out.println("The conversion of Octal number ["+octalnum+"]  to Decimal number is = "+Converted_number);
 			break;
 		}
 		case 5: {
 			getDecimalNumber();
-			String Converted_number=NumberConverter.toDecimal_to_hexadecimal(decimalnum);
+			String Converted_number=NumberConverter.toDecimaltoHexadecimalConversion(decimalnum);
 			System.out.println("The conversion of Decimal number ["+decimalnum+"]  to Octal number is = "+Converted_number);
 			break;
 		}
 		case 6: {
 			getHexadecimalNumber();
-			Converted_number=NumberConverter.toHexadecimal_to_decimal(hexadecimalnum);
+			Converted_number=NumberConverter.toHexadecimaltoDecimalConversion(hexadecimalnum);
 			System.out.println("The conversion of Hexadecimal number ["+hexadecimalnum+"]  to Decimal number is = "+Converted_number);
 			break;
 		}
