@@ -133,7 +133,7 @@ public class User_client {
 	int decimalnum,binarynum,octalnum;
 	String hexadecimalnum;
 	
-	public void toChoice_the_Operation() {
+	public void toChoose_the_Operation() {
 		System.out.println("***** << Numeric Conversion >> *****");
 		System.out.println("1.Decimal to Binary \n2.Binary to Decimal");
 		System.out.println("3.Decimal to Octal \n4.Octal to Decimal");
