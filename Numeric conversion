@@ -220,7 +220,7 @@ public class User_client {
 		char ch;
 		
 		do {
-			numObject.toChoise_the_Operation();
+			numObject.toChoose_the_Operation();
 			
 			System.out.println("Do you want to continue...[press'y'] =");
 			ch=scan.next().charAt(0);
