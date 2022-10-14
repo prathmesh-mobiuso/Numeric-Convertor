@@ -18,6 +18,7 @@ class NumberConverter {
 		char[] input=binaryNumber.toCharArray();
 		int index=0,answer=0;
 		int a=0;
+		try {
 		for(int i=input.length-1;i>=0;i--) {
 			
 			if(input[i]=='0') {
@@ -27,13 +28,20 @@ class NumberConverter {
 				index=1;
 			}
 			else {
-				System.out.println("Wrong binary number.");	 
+				throw new IllegalArgumentException("Wrong binary number");	
+				
 			}
-			
 			answer=(int) (answer+Math.pow(2, a)*index);
 			a++;
-		}
+			}
 		return answer;
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Inputted Wrong Binary number ");
+		}
+			
+
+		return 0;
 	}
 	
 	
@@ -85,6 +93,7 @@ class NumberConverter {
 		int answer=0;
 		int i=0,count=0,index=0;
 		
+		try {
 		for(int a=input.length-1;a>=0;a--) 
 		{
 			count=0;
@@ -100,14 +109,19 @@ class NumberConverter {
 				  
 				  if (count>15)
 				  {
-				  System.out.println("worng no. inputed");
-				  break;
+					  throw new IllegalArgumentException("Inputed wrong number");
+				
 				  }
 			  }
 			  answer=(int) (answer+Math.pow(16,i)*index);
 			  i++; 
 			}
 		return answer;
+		}
+		catch(Exception e) {
+			System.out.println("Inputed wrong number");
+		}
+		return 0;
 	}	
 }
 
